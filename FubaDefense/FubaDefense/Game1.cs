@@ -12,10 +12,15 @@ namespace FubaDefense
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        //Textures
+        Texture2D map;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 600;
         }
 
         /// <summary>
@@ -40,8 +45,12 @@ namespace FubaDefense
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            map = Content.Load<Texture2D>(@"graphics\Teste");
+            
+
         }
+
+
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -75,7 +84,9 @@ namespace FubaDefense
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            spriteBatch.Draw(map, new Rectangle(0, 0, map.Width, map.Height), Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
