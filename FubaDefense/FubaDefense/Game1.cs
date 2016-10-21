@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace FubaDefense
 {
@@ -14,6 +15,16 @@ namespace FubaDefense
 
         //Textures
         Texture2D map;
+        List<Texture2D> enemiesSprites;
+
+        //Lists Objects
+        List<Enemy> listEnemies;
+        List<TrajectPoint> map1Path;
+        Waves waves;
+
+        //object controls
+        bool waveActive = true;
+        private int elapsedSpawnTime = 0;
 
         public Game1()
         {
@@ -31,9 +42,21 @@ namespace FubaDefense
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            enemiesSprites = new List<Texture2D>();
+
+            map1Path = new List<TrajectPoint>{
+            new TrajectPoint(new Point(736, 480), "Left"),
+            new TrajectPoint(new Point(512, 480), "Up"),
+            new TrajectPoint(new Point(512, 160), "Left"),
+            new TrajectPoint(new Point(64, 160), "Down")
+            };
+
+            waves = new Waves();
 
             base.Initialize();
+
+
+
         }
 
         /// <summary>
@@ -46,7 +69,10 @@ namespace FubaDefense
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             map = Content.Load<Texture2D>(@"graphics\Teste");
-            
+            enemiesSprites.Add(Content.Load<Texture2D>(@"graphics\teddybear"));
+            enemiesSprites.Add(Content.Load<Texture2D>(@"graphics\bat"));
+
+
 
         }
 
@@ -71,7 +97,17 @@ namespace FubaDefense
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            if (waves.IsSpawn)
+            {
+                waves.update(1, enemiesSprites, map1Path,gameTime);
+                listEnemies = waves.ListEnemies;    
+            }
+
+            foreach (EnemyBat enemy in listEnemies)
+            {
+                enemy.Update(gameTime);
+            }
+
 
             base.Update(gameTime);
         }
@@ -86,6 +122,13 @@ namespace FubaDefense
 
             spriteBatch.Begin();
             spriteBatch.Draw(map, new Rectangle(0, 0, map.Width, map.Height), Color.White);
+
+
+            foreach (EnemyBat enemy in listEnemies)
+            {
+                enemy.Draw(spriteBatch);
+            }
+
             spriteBatch.End();
 
             base.Draw(gameTime);

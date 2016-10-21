@@ -24,3 +24,5 @@ C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\obj\x86\Debug\FubaDefense
 C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\obj\x86\Debug\FubaDefense.pdb
 C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\bin\Windows\x86\Debug\Content\graphics\Teste.xnb
 C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\obj\x86\Debug\FubaDefense.csprojResolveAssemblyReference.cache
+C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\bin\Windows\x86\Debug\Content\graphics\teddybear.xnb
+C:\WorkspaceVisual\FubaDefense\FubaDefense\FubaDefense\bin\Windows\x86\Debug\Content\graphics\bat.xnb

@@ -5,5 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/Teste.png</File>
+    <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/teddybear.png</File>
+    <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/bat.png</File>
   </SourceFiles>
 </SourceFileCollection>
