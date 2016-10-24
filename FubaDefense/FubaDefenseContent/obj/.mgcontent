@@ -4,8 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/Teste.png</File>
-    <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/teddybear.png</File>
-    <File>C:/WorkspaceVisual/FubaDefense/FubaDefense/FubaDefenseContent/graphics/bat.png</File>
+    <File>C:/Users/gilis/Desktop/FubaDefense/FubaDefense/FubaDefenseContent/graphics/Teste.png</File>
+    <File>C:/Users/gilis/Desktop/FubaDefense/FubaDefense/FubaDefenseContent/graphics/teddybear.png</File>
+    <File>C:/Users/gilis/Desktop/FubaDefense/FubaDefense/FubaDefenseContent/graphics/bat.png</File>
+    <File>C:/Users/gilis/Desktop/FubaDefense/FubaDefense/FubaDefenseContent/graphics/towers1.png</File>
   </SourceFiles>
 </SourceFileCollection>
